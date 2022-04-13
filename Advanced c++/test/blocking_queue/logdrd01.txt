@@ -1,0 +1,20 @@
+==87756== drd, a thread error detector
+==87756== Copyright (C) 2006-2017, and GNU GPL'd, by Bart Van Assche.
+==87756== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==87756== Command: ./utest
+==87756== Parent PID: 87037
+==87756== 
+==87756== 
+==87756== Process terminating with default action of signal 1 (SIGHUP)
+==87756==    at 0x487B7C4: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:42)
+==87756==    by 0x487B7C4: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==87756==    by 0x48468DE: pthread_mutex_unlock (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_drd-amd64-linux.so)
+==87756==    by 0x10E15B: cpp::Mutex::unlock() (mutex.hxx:41)
+==87756==    by 0x10E3BB: mt::BlockingQueue<int>::enqueue(int const&) (blocking_queue.hxx:30)
+==87756==    by 0x10C1D6: producer(void*) (utest.cpp:15)
+==87756==    by 0x48424BA: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_drd-amd64-linux.so)
+==87756==    by 0x4877608: start_thread (pthread_create.c:477)
+==87756==    by 0x4BAE162: clone (clone.S:95)
+==87756== 
+==87756== For lists of detected and suppressed errors, rerun with: -s
+==87756== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 12 from 8)

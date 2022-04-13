@@ -1,0 +1,107 @@
+==16512== Memcheck, a memory error detector
+==16512== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==16512== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==16512== Command: ./utest
+==16512== Parent PID: 4302
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x113DBF: bool cpp::isUniform<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:121)
+==16512==    by 0x10D2E4: vector_test() (utest.cpp:23)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x113F70: bool cpp::isSorted<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:95)
+==16512==    by 0x10D383: vector_test() (utest.cpp:24)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x113DBF: bool cpp::isUniform<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:121)
+==16512==    by 0x10D4F5: vector_test() (utest.cpp:31)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x113F70: bool cpp::isSorted<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:95)
+==16512==    by 0x10D593: vector_test() (utest.cpp:32)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x113DBF: bool cpp::isUniform<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:121)
+==16512==    by 0x10DF24: unique_vector_test() (utest.cpp:63)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x113F70: bool cpp::isSorted<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:95)
+==16512==    by 0x10DFC3: unique_vector_test() (utest.cpp:64)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Invalid read of size 4
+==16512==    at 0x11DE56: cpp::SortedVectorIterator<int>::operator*() const (sorted_vector.hxx:31)
+==16512==    by 0x11686E: cpp::ContainerIterator<int>::operator!=(cpp::ContainerIterator<int> const&) const (sorted_container.hxx:16)
+==16512==    by 0x113DBC: bool cpp::isUniform<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:121)
+==16512==    by 0x10E0A6: unique_vector_test() (utest.cpp:71)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512==  Address 0x4db27c0 is 0 bytes after a block of size 80 alloc'd
+==16512==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16512==    by 0x11B7A3: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:114)
+==16512==    by 0x11B0D8: __gnu_cxx::__alloc_traits<std::allocator<int>, int>::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:133)
+==16512==    by 0x11A2AB: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:343)
+==16512==    by 0x1184CF: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<int*>(unsigned long, int*, int*) (stl_vector.h:1508)
+==16512==    by 0x116656: std::vector<int, std::allocator<int> >::reserve(unsigned long) (vector.tcc:85)
+==16512==    by 0x114871: cpp::SortedUniqueVector<int>::SortedUniqueVector(unsigned long) (sorted_unique_vector.hxx:16)
+==16512==    by 0x10DDBE: unique_vector_test() (utest.cpp:59)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Invalid read of size 4
+==16512==    at 0x11DE56: cpp::SortedVectorIterator<int>::operator*() const (sorted_vector.hxx:31)
+==16512==    by 0x11686E: cpp::ContainerIterator<int>::operator!=(cpp::ContainerIterator<int> const&) const (sorted_container.hxx:16)
+==16512==    by 0x113F6D: bool cpp::isSorted<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:95)
+==16512==    by 0x10E144: unique_vector_test() (utest.cpp:72)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512==  Address 0x4db27c0 is 0 bytes after a block of size 80 alloc'd
+==16512==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16512==    by 0x11B7A3: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:114)
+==16512==    by 0x11B0D8: __gnu_cxx::__alloc_traits<std::allocator<int>, int>::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:133)
+==16512==    by 0x11A2AB: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:343)
+==16512==    by 0x1184CF: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<int*>(unsigned long, int*, int*) (stl_vector.h:1508)
+==16512==    by 0x116656: std::vector<int, std::allocator<int> >::reserve(unsigned long) (vector.tcc:85)
+==16512==    by 0x114871: cpp::SortedUniqueVector<int>::SortedUniqueVector(unsigned long) (sorted_unique_vector.hxx:16)
+==16512==    by 0x10DDBE: unique_vector_test() (utest.cpp:59)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Invalid read of size 4
+==16512==    at 0x11DE56: cpp::SortedVectorIterator<int>::operator*() const (sorted_vector.hxx:31)
+==16512==    by 0x116855: cpp::ContainerIterator<int>::operator!=(cpp::ContainerIterator<int> const&) const (sorted_container.hxx:16)
+==16512==    by 0x113F6D: bool cpp::isSorted<int>(cpp::SortedContainer<int> const&) (sorted_container.hxx:95)
+==16512==    by 0x10E144: unique_vector_test() (utest.cpp:72)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512==  Address 0x4db27c0 is 0 bytes after a block of size 80 alloc'd
+==16512==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16512==    by 0x11B7A3: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:114)
+==16512==    by 0x11B0D8: __gnu_cxx::__alloc_traits<std::allocator<int>, int>::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:133)
+==16512==    by 0x11A2AB: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:343)
+==16512==    by 0x1184CF: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<int*>(unsigned long, int*, int*) (stl_vector.h:1508)
+==16512==    by 0x116656: std::vector<int, std::allocator<int> >::reserve(unsigned long) (vector.tcc:85)
+==16512==    by 0x114871: cpp::SortedUniqueVector<int>::SortedUniqueVector(unsigned long) (sorted_unique_vector.hxx:16)
+==16512==    by 0x10DDBE: unique_vector_test() (utest.cpp:59)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x115D0F: bool cpp::isSorted<cpp::Ball>(cpp::SortedContainer<cpp::Ball> const&) (sorted_container.hxx:95)
+==16512==    by 0x11172B: ball_test() (utest.cpp:307)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== Conditional jump or move depends on uninitialised value(s)
+==16512==    at 0x115EF1: bool cpp::isUniform<cpp::Ball>(cpp::SortedContainer<cpp::Ball> const&) (sorted_container.hxx:121)
+==16512==    by 0x11186F: ball_test() (utest.cpp:309)
+==16512==    by 0x112BCA: main (utest.cpp:344)
+==16512== 
+==16512== 
+==16512== HEAP SUMMARY:
+==16512==     in use at exit: 0 bytes in 0 blocks
+==16512==   total heap usage: 302 allocs, 302 frees, 82,572 bytes allocated
+==16512== 
+==16512== All heap blocks were freed -- no leaks are possible
+==16512== 
+==16512== Use --track-origins=yes to see where uninitialised values come from
+==16512== For lists of detected and suppressed errors, rerun with: -s
+==16512== ERROR SUMMARY: 64 errors from 11 contexts (suppressed: 0 from 0)
