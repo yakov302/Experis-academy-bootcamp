@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "server.h"
+
 #define ACCEPT_CLIENT 1
 #define BUFFER_SIZE 1500
 
